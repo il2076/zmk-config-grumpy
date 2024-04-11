@@ -9,9 +9,9 @@
 #define NAV 3
 #define FUN 4
 
-// &lt {
-//     quick_tap_ms = <170>;
-// };
+&sk {
+    release-after-ms = <5000>;
+};
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BSPC LSHFT RSHFT>;
@@ -41,12 +41,11 @@
             then-layer = <4>;
         };
     };
-    
 };
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
 combo_##NAME { \
-    timeout-ms = <20>; \
+    timeout-ms = <35>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
 };
@@ -75,6 +74,7 @@ combo_##NAME { \
         COMBO(rbrc, &kp RBRC, 7 16)
 /* caps */
         COMBO(capslock, &kp CAPSLOCK, 0 7)
+        COMBO(caps, &caps_word, 2 5)
 /* deletion */
         COMBO(del, &kp DEL, 6 7)
         COMBO(delword, &kp LC(BSPC), 5 7)
@@ -159,7 +159,7 @@ combo_##NAME { \
             label = "NUM";
 
             bindings = <
-                        &none      &sk LGUI    &none       &none      &none   &kp N7   &kp N8   &kp N9
+                        &none      &sk LGUI    &kp TAB     &none      &none   &kp N7   &kp N8   &kp N9
                 &none   &sk LALT   &sk LCTRL   &sk LSHFT   &none      &none   &kp N4   &kp N5   &kp N6   &none
                 &trans  &none &sk LC(LS(LALT)) &none                          &kp N1   &kp N2   &kp N3   &trans
                                                           &trans      &kp N0
