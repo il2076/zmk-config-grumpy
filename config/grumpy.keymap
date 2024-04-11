@@ -59,7 +59,7 @@ combo_##NAME { \
 /* usually on base layer */
         COMBO(z, &kp Z, 19 20)
         COMBO(v, &kp V, 0 1)
-        COMBO(smart_qu, &smart_qu 0 Q, 1 2)
+        COMBO(smart_qu, &smart_qu Q 0, 1 2)
         COMBO(slash, &kp SLASH, 23 24)
         COMBO(enter, &kp ENTER, 22 24)
         COMBO(esc, &kp ESC, 19 10 21)
@@ -105,7 +105,7 @@ combo_##NAME { \
             flavor = "tap-preferred";
             tapping-term-ms = <150>;
             quick-tap-ms = <200>;
-            bindings = <&macro_qu>, <&kp>;
+            bindings = <&kp>, <&macro_qu>;
         };
 //   ____________________________  ____________________________
 //  /       0  |  1  |  2  |  3  \/   4 |   5 |   6 |   7      \
@@ -151,7 +151,7 @@ combo_##NAME { \
             bindings = <
                         &kp C   &kp L   &kp F   &kp P      &kp K   &kp Y   &kp O   &kp U
                 &kp R   &kp S   &kp N   &kp T   &kp B      &kp J   &kp H   &kp E   &kp I   &kp A
-           &my_lt NUM X &kp W   &kp M   &kp G                      &kp D   &comsem &dotcol &my_lt SYM ENTER
+           &my_lt NUM X &kp W   &kp M   &kp G                      &kp D   &comsem &dotcol &my_lt SYM SQT
                                           &kp SPACE &kp LSHIFT
             >;
         };
