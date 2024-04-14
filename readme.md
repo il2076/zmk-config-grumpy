@@ -6,6 +6,7 @@
 This is my personal keymap for the grumpy keyboard.
 
 The layout I use is bird from jcmkk3. [source](https://github.com/jcmkk3/bird-layout)
+
 In this keymap I use: 
 - something akin to callum style mods (though not exactly)
 - slightly customized layer taps for non-home-row pinky keys (mostly inherited from kilipan's keymap, subject to change)
@@ -17,11 +18,11 @@ In this keymap I use:
 
 ## My modifications
 
-This keymap firmware config is forked from kilipan, and I had to change a few things because we have different preferences.
-I've kept a lot of the already present custom behavior already present, modified some, and added others.
+This keymap firmware config is forked from kilipan, the changes are a consequence of personal preferences.
+I've kept a lot of the custom behavior already present, modified some, and added others.
 
-I prefer callum style mods to more common hold-tap (i.e. mod-tap) home row mods, but the ZMK `&sk` behavior doesn't behave in a way I'm used to one shot mods frod QMK.
-In QMK, OSMs behave as normal mods when held, i.e. they don't get queued up when held. This isn't the case for sticky keys by default, but I haven't fully explored the potential solutions.
+I prefer callum style mods to more common hold-tap (i.e. mod-tap) home row mods, but the ZMK `&sk` behavior doesn't behave in a way I'm used to from one shot mods from QMK.
+In QMK, OSMs behave as normal mods when held, i.e. they don't get queued up when held. This isn't the case for sticky keys by default, and the most obvious solution that comes to mind is implementing a hold-tap that only triggers the `&sk` when the key is tapped, otherwise behaves as a normal mod. I haven't explored the potential solutions very thoroughly, so there might be even simpler solutions.
 
 Other than that, I've implemented something called Linger Key by the Hands Down family of layouts creator. My starting point was the sch/Sch macro already present in kilipan's keymap.
 Essentially, a linger key is supposed to output a macro that can also be shifted (which would make the first letter capital) when tapped, but only the first letter when held (which can also be shifted).
