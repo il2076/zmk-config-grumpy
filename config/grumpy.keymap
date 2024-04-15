@@ -11,6 +11,7 @@
 
 &sk {
     release-after-ms = <5000>;
+    lazy;
 };
 
 &caps_word {
@@ -108,6 +109,14 @@ combo_##NAME { \
             quick-tap-ms = <200>;
             bindings = <&kp>, <&macro_qu>;
         };
+
+        isk: intuitive_sk {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&sk>;
+        };
 //   ____________________________  ____________________________
 //  /       0  |  1  |  2  |  3  \/   4 |   5 |   6 |   7      \
 // |  8  |  9  | 10  | 11  | 12  /\  13 |  14 |  15 |  16 | 17  |
@@ -160,10 +169,10 @@ combo_##NAME { \
             label = "NUM";
 
             bindings = <
-                        &none      &sk LGUI    &kp TAB     &none      &none   &kp N7   &kp N8   &kp N9
-                &none   &sk LALT   &sk LCTRL   &sk LSHFT   &none      &none   &kp N4   &kp N5   &kp N6   &none
-                &trans  &none &sk LC(LS(LALT)) &none                          &kp N1   &kp N2   &kp N3   &trans
-                                                          &trans      &kp N0
+                        &none                 &isk LGUI LGUI     &kp TAB     &none           &none    &kp N7   &kp N8   &kp N9
+                &none   &isk LALT LALT   &isk LCTRL LCTRL   &isk LSHIFT LSHFT      &none    &none   &kp N4   &kp N5   &kp N6   &none
+                &trans  &none           &isk LC(LS(LALT)) LC(LS(LALT)) &none                                  &kp N1   &kp N2   &kp N3   &trans
+                                                                         &trans                      &kp N0
             >;
         };
         symbols {
@@ -180,9 +189,9 @@ combo_##NAME { \
             label = "NAV";
 
             bindings = <
-                        &none     &sk LGUI     &kp TAB     &none      &none   &kp PG_UP   &kp UP     &kp PG_DN
-                &none   &sk LALT  &sk LCTRL    &sk LSHFT   &none      &none   &kp LEFT    &kp DOWN   &kp RIGHT   &none
-                &trans  &none &sk LC(LS(LALT)) &none                          &kp HOME    &kp INS    &kp END     &trans
+                        &none     &isk LGUI LGUI     &kp TAB     &none      &none   &kp PG_UP   &kp UP     &kp PG_DN
+                &none   &isk LALT LALT  &isk LCTRL LCTRL    &isk LSHFT LSHFT   &none      &none   &kp LEFT    &kp DOWN   &kp RIGHT   &none
+                &trans  &none &isk LC(LS(LALT)) LC(LS(LALT)) &none                          &kp HOME    &kp INS    &kp END     &trans
                                                        &trans         &trans
             >;
         };
