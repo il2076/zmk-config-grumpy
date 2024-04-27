@@ -109,7 +109,7 @@ combo_##NAME { \
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             retro-tap;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&sk>;
         };
