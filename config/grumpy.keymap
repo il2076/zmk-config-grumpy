@@ -54,8 +54,6 @@ combo_##NAME { \
 / {
     combos {
         compatible = "zmk,combos";
-/* nav layer combo */
-        COMBO(nav, &mo NAV, 18 26, 60)
 /* usually on base layer */
         COMBO(z, &kp Z, 19 20, 35)
         COMBO(v, &kp V, 0 1, 35)
@@ -94,6 +92,26 @@ combo_##NAME { \
             quick-tap-ms = <100>;
             retro-tap;
             bindings = <&mo &kp>, <&kp>;
+        };
+
+        spc_lt: space_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <175>;
+            quick-tap-ms = <100>;
+            retro-tap;
+            bindings = <&mo &kp>, <&kp>;
+        };
+
+        sym_lt: my_layer_taps {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <100>;
+            retro-tap;
+            bindings = <&sl &kp>, <&kp>;
         };
 
         smart_qu: smart_qu_hold_tap {
@@ -166,8 +184,8 @@ combo_##NAME { \
             bindings = <
                         &kp C   &kp L   &kp F   &kp P      &kp K   &kp Y   &kp O   &kp U
                 &kp R   &kp S   &kp N   &kp T   &kp B      &kp J   &kp H   &kp E   &kp I   &kp A
-           &my_lt NUM X &kp W   &kp M   &kp G                      &kp D   &comsem &dotcol &my_lt SYM SQT
-                                          &kp SPACE &shift_bp LSHIFT BSPC
+           &my_lt NUM X &kp W   &kp M   &kp G                      &kp D   &comsem &dotcol &sym_lt SYM SQT
+                                        &spc_lt NAV SPACE &shift_bp LSHIFT BSPC
             >;
         };
         numbers {
