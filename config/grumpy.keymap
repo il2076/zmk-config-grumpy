@@ -104,7 +104,7 @@ combo_##NAME { \
             bindings = <&mo &kp>, <&kp>;
         };
 
-        sym_lt: my_layer_taps {
+        sym_lt: symbol_sticky_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
