@@ -28,6 +28,12 @@ Other than that, I've implemented something called Linger Key by the Hands Down 
 Essentially, a linger key is supposed to output a macro that can also be shifted (which would make the first letter capital) when tapped, but only the first letter when held (which can also be shifted).
 This can be achieved nicely with ZMK's hold-tap behavior. I've bound this to a combo on top row, middle and index finger (the usual position of Q on the bird layout).
 
+## Keymap-drawer representation
+
+Courtesy of [caksoylar's keymap-drawer](https://github.com/caksoylar/keymap-drawer) :)
+
+![keymap_drawer_representation](./documentation/grumpy_keymap.svg?raw=true "Keymap representation")
+
 ## HOW TO USE
 
 - fork this repo
